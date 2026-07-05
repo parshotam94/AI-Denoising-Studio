@@ -21,7 +21,7 @@ An elegant, production-ready AI SaaS web application that performs high-fidelity
 ```text
 ai_denoising_studio/
 │
-├── backend/
+├── api/
 │   ├── main.py             # FastAPI App Engine & Inference APIs
 │   └── train_model.py       # Weights Compilation & Asset Pipeline
 │
@@ -38,10 +38,12 @@ ai_denoising_studio/
 │           └── app.js       # Asynchronous Application Orchestrator
 │
 └── models/
-    ├── autoencoder.h5       # Saved Encoder/Decoder Weights (Generated)
-    ├── classifier.h5        # Saved Predictive Classifier (Generated)
-    ├── x_test.npy           # Normalized Inference Reference Data (Generated)
-    └── y_test.npy           # Image Ground-Truth Labels (Generated)
+│   ├── autoencoder.h5       # Saved Encoder/Decoder Weights (Generated)
+│   ├── classifier.h5        # Saved Predictive Classifier (Generated)
+│   ├── x_test.npy           # Normalized Inference Reference Data (Generated)
+│   └── y_test.npy           # Image Ground-Truth Labels (Generated)
+│
+├── requirements.txt
 ```
 
 ## 🛠️ Technical Implementation Spec
@@ -64,8 +66,7 @@ ai_denoising_studio/
 Clone or place the codebase files directly inside an active project folder directory and set up core operational dependencies:
 
 ```bash
-pip install fastapi uvicorn tensorflow numpy opencv-python scikit-image pydantic
-
+pip install -r requirements.txt
 ```
 
 ### 2. Run Weights Preparation Sequences
@@ -73,7 +74,7 @@ pip install fastapi uvicorn tensorflow numpy opencv-python scikit-image pydantic
 Before booting up the service server, you must run the background compilation script *once* to populate dataset subsets and build localized network weights:
 
 ```bash
-python backend/train_model.py
+python api/train_model.py
 
 ```
 
@@ -84,7 +85,7 @@ python backend/train_model.py
 Launch the application microservice utilizing the standard high-performance ASGI `uvicorn` engine execution framework:
 
 ```bash
-uvicorn backend.main:app --reload --port 8000
+uvicorn api.main:app --reload --port 8000
 
 ```
 
