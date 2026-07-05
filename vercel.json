@@ -4,8 +4,7 @@
   "builds": [
     {
       "src": "api/main.py",
-      "use": "@vercel/python",
-      "config": { "runtimeArgs": ["--python", "python3.11"] }
+      "use": "@vercel/python"
     }
   ],
   "routes": [
