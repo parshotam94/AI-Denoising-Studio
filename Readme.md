@@ -42,8 +42,8 @@ ai_denoising_studio/
     ├── classifier.h5        # Saved Predictive Classifier (Generated)
     ├── x_test.npy           # Normalized Inference Reference Data (Generated)
     └── y_test.npy           # Image Ground-Truth Labels (Generated)
+```
 
-```markdown
 ## 🛠️ Technical Implementation Spec
 
 ### Machine Learning Models
