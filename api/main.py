@@ -1,8 +1,10 @@
 import os
+os.environ["TF_USE_LEGACY_KERAS"] = "1"
+import tensorflow as tf
+import os
 import time
 import cv2
 import numpy as np
-import tensorflow as tf
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse
