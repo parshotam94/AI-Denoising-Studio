@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+tensorflow-cpu==2.14.0
+numpy
+opencv-python-headless
+scikit-image
+pydantic

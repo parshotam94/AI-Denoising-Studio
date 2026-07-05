@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><title>Architecture Structural Matrix</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">DENOISE.STUDIO</div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/training">Training</a>
+            <a href="/visualization">Architecture</a>
+        </div>
+    </nav>
+    <main>
+        <div class="card" id="latent-inspect-trigger">
+            <h1>Autoencoder Structural Matrix Topology</h1>
+            <p>Inspection view outlining layers configuration maps parsing spatial structures down to a latent vector bottle-neck before restoring dimensions back via mirrors decoder operations.</p>
+            
+            <div class="dashboard-grid" style="margin-top: 2rem;">
+                <div class="metric-card" style="text-align: left;">
+                    <h3 style="color: var(--accent-blue); margin-bottom: 1rem;">Encoder Stack</h3>
+                    <ul id="enc-layers" style="margin-left: 1.25rem; line-height: 1.75;"><li>Loading Topology...</li></ul>
+                </div>
+                <div class="metric-card" style="text-align: left;">
+                    <h3 style="color: var(--accent-green); margin-bottom: 1rem;">Decoder Topology Stack</h3>
+                    <ul id="dec-layers" style="margin-left: 1.25rem; line-height: 1.75;"><li>Loading Topology...</li></ul>
+                </div>
+            </div>
+            <div class="metric-card" style="margin-top: 1.5rem; text-align: center;">
+                <h4>Latent Bottleneck Vector Dimensions Allocation Size</h4>
+                <div class="metric-value" id="latent-dim" style="font-size: 2rem;">---</div>
+            </div>
+        </div>
+    </main>
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

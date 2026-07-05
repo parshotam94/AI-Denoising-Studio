@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "cleanUrls": true,
+  "builds": [
+    {
+      "src": "api/main.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    { "src": "/static/(.*)", "dest": "frontend/static/$1" },
+    { "src": "/", "dest": "api/main.py" },
+    { "src": "/dashboard", "dest": "api/main.py" },
+    { "src": "/training", "dest": "api/main.py" },
+    { "src": "/visualization", "dest": "api/main.py" },
+    { "src": "/api/(.*)", "dest": "api/main.py" }
+  ]
+}

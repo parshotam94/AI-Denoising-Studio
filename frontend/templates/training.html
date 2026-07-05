@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><title>Training Center | Denoising Studio</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">DENOISE.STUDIO</div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/training">Training</a>
+            <a href="/visualization">Architecture</a>
+        </div>
+    </nav>
+    <main>
+        <div class="card">
+            <h1>Model Execution Control Center</h1>
+            <p>Simulate training execution cycle, optimization algorithms adjustments, loss computations updates, and deployment log outputs.</p>
+            <button id="start-train-sim" style="max-width: 200px; margin-bottom: 1.5rem;">Initialize Training Loop</button>
+            
+            <div style="background: rgba(255,255,255,0.05); height: 6px; border-radius: 3px; overflow: hidden; margin-bottom: 1.5rem;">
+                <div id="train-progress" style="background: var(--accent-green); width: 0%; height: 100%; transition: width 0.3s ease;"></div>
+            </div>
+
+            <div class="console-box" id="console-logs">
+                > System Idle. Ready for model loop authorization signal...
+            </div>
+        </div>
+    </main>
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

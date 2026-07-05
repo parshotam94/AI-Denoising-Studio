@@ -1,0 +1,204 @@
+:root {
+    --bg-dark: #0F172A;
+    --card-bg: rgba(30, 41, 59, 0.7);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --accent-blue: #38BDF8;
+    --accent-green: #4ADE80;
+    --text-main: #F8FAFC;
+    --text-muted: #94A3B8;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav .logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background: linear-gradient(to right, var(--accent-blue), var(--accent-green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+nav .nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-left: 1.5rem;
+    transition: color 0.3s;
+    font-size: 0.95rem;
+}
+
+nav .nav-links a:hover, nav .nav-links a.active {
+    color: var(--accent-blue);
+}
+
+/* Global Grid and Layout Structure */
+main {
+    flex: 1;
+    padding: 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+p { color: var(--text-muted); margin-bottom: 2rem; }
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2rem;
+    backdrop-filter: blur(16px);
+    margin-bottom: 2rem;
+}
+
+/* Dashboard Controls */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+}
+
+.control-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+select, input[type="range"], button {
+    width: 100%;
+    padding: 0.75rem;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+}
+
+button {
+    background: linear-gradient(135deg, var(--accent-blue), #2563EB);
+    cursor: pointer;
+    font-weight: 600;
+    border: none;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+button:hover { transform: translateY(-2px); opacity: 0.9; }
+
+/* Dynamic Pipelines tracking animation status elements */
+.pipeline-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(15, 23, 42, 0.4);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-top: 1rem;
+    border: 1px dashed var(--border-color);
+}
+
+.pipe-step {
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    background: #1E293B;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    transition: all 0.3s ease;
+}
+
+.pipe-step.active {
+    background: var(--accent-blue);
+    color: var(--bg-dark);
+    font-weight: bold;
+    box-shadow: 0 0 12px var(--accent-blue);
+}
+
+/* Visualization Multi-Column Framework */
+.output-showcase {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.img-container {
+    text-align: center;
+}
+
+.img-container canvas {
+    background: #000;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 180px;
+    image-rendering: pixelated;
+}
+
+.metrics-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.metric-card {
+    background: rgba(15, 23, 42, 0.5);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+.metric-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-green);
+    margin-top: 0.25rem;
+}
+
+/* Logs and Simulation console layout styling */
+.console-box {
+    background: #020617;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 1.5rem;
+    border-radius: 8px;
+    height: 250px;
+    overflow-y: auto;
+    color: #38BDF8;
+    font-size: 0.85rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
